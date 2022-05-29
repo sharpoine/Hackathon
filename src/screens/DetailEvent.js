@@ -19,7 +19,7 @@ import * as Keychain from 'react-native-keychain';
 
 export default function DetailEvent({ route, navigation }) {
     const [event, setEvent] = useState({})
-
+    
     const [userId, setUserId] = useState()
     const[isBtnDisabled,setIsBtnDisabled]=useState(false)
 
@@ -36,8 +36,10 @@ export default function DetailEvent({ route, navigation }) {
 
 
         fetchEvent()
-        
-    }, [Keychain,isBtnDisabled])
+        if(route.params.isBtnDisabled){
+            setIsBtnDisabled(true)
+        }
+    }, [Keychain,isBtnDisabled,route])
 
     const joinAttend = () => {
 
@@ -53,6 +55,7 @@ export default function DetailEvent({ route, navigation }) {
                 }).catch(err => console.log(err))
 
         }
+        setIsBtnDisabled(true)
     }
 
     const fetchEvent = () => {
@@ -68,13 +71,13 @@ export default function DetailEvent({ route, navigation }) {
 
                 
             }).catch((err) => console.log(err, 'AXIOS-SINGLE-EVENT-ERROR'))
-            isAttendedAlready();
+            //isAttendedAlready();
     }
 
     const isAttendedAlready = () => {
         console.log('stateid', userId)
-        if (event.attendees) {
-           event.attendees?.includes(userId)?setIsBtnDisabled(false):setIsBtnDisabled(true)
+        if (event) {
+           event.attendees.includes(userId)?setIsBtnDisabled(false):setIsBtnDisabled(true)
         }
         //console.log(,'denemeverisi')
     }

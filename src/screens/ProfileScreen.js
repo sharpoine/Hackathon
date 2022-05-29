@@ -62,7 +62,7 @@ export default function ProfileScreen({ route, navigation }) {
         )
     }
     const renderItem = ({ item, index }) => (
-        <TouchableOpacity onPress={()=>navigation.navigate('DetailEvent',{ID:item.ID})} style={{backgroundColor:'red',margin:10,padding:10,width:100,borderRadius:8}}>
+        <TouchableOpacity onPress={()=>navigation.navigate('DetailEvent',{ID:item.ID,isBtnDisabled:true})} style={{backgroundColor:'red',margin:10,padding:10,width:100,borderRadius:8}}>
             <FontAwesome5 name={'calendar'} size={24} color='black'/>
             <Text>{item.title}</Text>
         </TouchableOpacity>
