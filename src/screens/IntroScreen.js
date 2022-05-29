@@ -24,15 +24,15 @@ import { useNavigation } from '@react-navigation/native';
 const slides = [
     {
         key: 1,
-        title: 'Title 1',
-        text: 'Description.\nSay something cool',
+        title: '',
+        text: 'Spor, Konuşma, Konser gibi\nher türlü etkinliği tek platformdan takip et.',
         color: '#C3CBF4',
         backgroundColor: '#163DF8',
     },
     {
         key: 2,
-        title: 'Title 2',
-        text: 'Other cool stuff',
+        title: 'İstediğin türde etkinlik yok mu?',
+        text: 'Belediyene başvurarak kendi etkinliğini düzenle',
         color: '#163DF8',
         backgroundColor: '#C3CBF4',
     },

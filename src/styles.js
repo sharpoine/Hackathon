@@ -24,10 +24,14 @@ const styles = StyleSheet.create({
     },
     slideText: {
         color: 'black',
-        fontSize:36
+        fontSize:30,
+        textAlign:'center',
+        margin:10
     },
     slideTitle:{
-        fontSize:48
+        fontSize:48,
+        margin:10,
+        textAlign:'center'
     },
     buttonCircle: {
         width: 40,
